@@ -1,0 +1,580 @@
+/* ==========================================================================
+   1. GLOBAL SETTINGS & ROOT VARIABLES
+   ========================================================================== */
+:root {
+  --primary-color: #E3005C;
+  --primary-hover: #C2004F;
+  --text-dark: #212529;
+  --text-muted: #6C757D;
+  --bg-light: #FFFFFF;
+  --bg-gray: #F9F9F9;
+  --pink-tint: #FFF5F8;
+  --star-gold: #FFC107;
+}
+
+body {
+  font-family: 'Jost', 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Mobile page layout stretch issue permanent fix */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reusable Section Titles */
+.section-title {
+  font-weight: 700;
+  font-size: 1.4rem; /* Fluid dynamic size scaling */
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+.section-title span {
+  color: var(--primary-color);
+}
+/* ==========================================================================
+    NAVBAR CLICKABLE INTERACTION HOVERS
+   ========================================================================== */
+.hover-pink-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.hover-pink-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Dropdown Menu Custom UI Sync */
+.dropdown-menu {
+  margin-top: 10px !important;
+  animation: navbarFade 0.25s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: var(--pink-tint) !important;
+  color: var(--primary-color) !important;
+}
+
+
+@keyframes navbarFade {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-slider-wrapper {
+    /* Jo pehle se likha hai use rehne dein, bas niche wali lines add kar dein */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* Agar image ki height bohot zyada khinch rahi hai, toh ek fixed height de dein */
+    height: 80vh; /* Isse banner screen ki 80% height lega aur image nahi fategi */
+    min-height: 450px; 
+}
+/* ==========================================================================
+   2. BUTTON SYSTEM
+   ========================================================================== */
+.btn-primary-main {
+  background-color: var(--primary-color) !important;
+  color: #FFFFFF !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 10px 24px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(227, 0, 92, 0.2);
+  transition: all 0.25s ease-in-out !important;
+}
+
+@media (min-width: 768px) {
+  .btn-primary-main {
+    font-size: 0.85rem !important;
+    padding: 12px 32px !important;
+  }
+}
+
+.btn-primary-main:hover {
+  background-color: var(--primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(227, 0, 92, 0.35);
+}
+
+.btn-primary-main:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION STYLES
+   ========================================================================== */
+.top-announcement-bar {
+  background-color: #ff89b8;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 6px 12px;
+}
+
+@media (min-width: 768px) {
+  .top-announcement-bar {
+    font-size: 0.78rem;
+  }
+}
+
+.search-input-box {
+  background-color: #b6c5e2;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+}
+
+.search-input-box:focus {
+  background-color: #FFF;
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   4. HERO BANNER SLIDER
+   ========================================================================== */
+.hero-slider-wrapper {
+  min-height: 380px; /* Mobile Viewport Balance scaling */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: background-image 0.8s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .hero-slider-wrapper {
+    min-height: 560px;
+    background-position: center right;
+  }
+}
+
+.hero-heading-light {
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  .hero-heading-light { font-size: 2.5rem; }
+}
+
+.hero-heading-pink {
+  color: var(--primary-color) !important;
+  letter-spacing: -1px;
+  line-weight: 0.95;
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-heading-pink {
+    font-size: 4rem;
+    letter-spacing: -1.5px;
+  }
+}
+
+.hero-desc-text {
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .hero-desc-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Slider Controls Navigation Arrows (< > Buttons) */
+.slider-arrow-btn {
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .slider-arrow-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.slider-arrow-btn:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-50%) scale(1.05) !important;
+}
+
+/* Pagination Dots Indicator */
+.slider-dots-container {
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-text {
+  animation: heroFadeIn 0.6s ease-in-out forwards;
+}
+
+/* ==========================================================================
+   5. CATEGORY ROUND CAROUSEL SLIDER (CLEAN & FULLY RESPONSIVE)
+   ========================================================================== */
+.categories-carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px !important; 
+}
+
+@media (min-width: 576px) {
+  .categories-carousel-container { padding: 0 15px !important; }
+}
+
+/* Outer Wrapper separating arrows layout completely */
+.categories-slider-relative-wrapper {
+  position: relative;
+  padding: 0 45px !important; /* Space preserved outside track limits for arrows */
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .categories-slider-relative-wrapper {
+    padding: 0 55px !important;
+  }
+}
+
+.categories-slider-window {
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 0 !important; 
+}
+
+.categories-slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Responsive Grid Nodes Distribution Formulas */
+.category-node-wrapper {
+  flex: 0 0 50%; /* 2 Items on micro devices */
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 480px) { .category-node-wrapper { flex: 0 0 33.333%; } } /* 3 Items */
+@media (min-width: 768px) { .category-node-wrapper { flex: 0 0 25%; } }     /* 4 Items */
+@media (min-width: 1024px) { .category-node-wrapper { flex: 0 0 16.666%; } }  /* 6 Items */
+
+/* Avatar Configuration Settings */
+.category-round-avatar, .category-avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background-color: #F8F9FA;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+@media (min-width: 768px) {
+  .category-round-avatar, .category-avatar-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.category-node-wrapper:hover .category-round-avatar,
+.category-node:hover .category-avatar-wrapper {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 20px rgba(227, 0, 92, 0.15);
+}
+
+.category-round-avatar img, .category-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-node-wrapper:hover .category-round-avatar img {
+  transform: scale(1.08); /* Anti-clipping scaling */
+}
+
+/* Labels */
+.category-custom-label, .category-lbl {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 0.6px;
+  color: #212529;
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .category-custom-label, .category-lbl {
+    font-size: 0.76rem;
+    margin-top: 12px;
+    letter-spacing: 0.8px;
+  }
+}
+
+.category-node-wrapper:hover .category-custom-label {
+  color: var(--primary-color);
+}
+
+/* Precise Edge-to-Edge Navigation Locking */
+.cat-slider-arrow {
+  width: 36px;
+  height: 36px;
+  background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  color: #212529;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .cat-slider-arrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.cat-slider-arrow.arrow-left { left: 0px !important; }
+.cat-slider-arrow.arrow-right { right: 0px !important; }
+
+.cat-slider-arrow:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.05) !important;
+}
+
+.cat-slider-arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.product-card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.add-cart-wrapper {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.product-card:hover .add-cart-wrapper {
+  bottom: 0;
+}
+
+.product-card img {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. OCCASION MASONRY GRID
+   ========================================================================== */
+.occasion-card-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 15px; /* Spacing fallback on stacked mobile structures */
+}
+
+.occasion-card-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.occasion-card-container:hover img {
+  transform: scale(1.04);
+}
+
+.occasion-text-layer {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .occasion-text-layer {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+.occasion-text-layer h4 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+}
+
+@media (min-width: 768px) {
+  .occasion-text-layer h4 { font-size: 1.3rem; }
+}
+
+.occasion-text-layer span {
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #FFF;
+}
+
+/* ==========================================================================
+   7. PRODUCT SHOWCASE CARDS
+   ========================================================================== */
+.product-showcase-card {
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.product-showcase-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-img-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: #F5F5F5;
+}
+
+.product-img-frame img {
+  width: 100%;
+  height: 260px; /* Fluid image dynamic height mapping on smartphones */
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .product-img-frame img { height: 340px; }
+}
+
+.discount-tag {
+  background-color: var(--primary-color);
+  color: #FFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.product-brand-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+}
+
+.product-name-heading {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.price-current {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.price-slashed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   8. REVIEWS & QUALITY BAND
+   ========================================================================== */
+.feedback-card-node {
+  background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .feedback-card-node { padding: 24px; }
+}
+
+.star-rating-color {
+  color: var(--star-gold);
+  font-size: 0.85rem;
+}
+
+.features-container-row {
+  background-color: var(--pink-tint);
+  border-top: 1px solid #FFE6F0;
+  border-bottom: 1px solid #FFE6F0;
+  padding: 20px 0;
+}
+
+.feature-icon-bullet {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .feature-icon-bullet { font-size: 1.6rem; }
+}
+
