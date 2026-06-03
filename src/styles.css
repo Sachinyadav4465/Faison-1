@@ -17,7 +17,7 @@ body {
   color: var(--text-dark);
   background-color: var(--bg-light);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; /* Mobile page layout stretch issue permanent fix */
+  overflow-x: hidden; 
 }
 
 a {
@@ -28,7 +28,7 @@ a {
 /* Reusable Section Titles */
 .section-title {
   font-weight: 700;
-  font-size: 1.4rem; /* Fluid dynamic size scaling */
+  font-size: 1.4rem; 
   letter-spacing: 0.5px;
 }
 
@@ -75,8 +75,8 @@ a {
     background-position: center !important;
     background-repeat: no-repeat !important;
     
-    /* Agar image ki height bohot zyada khinch rahi hai, toh ek fixed height de dein */
-    height: 80vh; /* Isse banner screen ki 80% height lega aur image nahi fategi */
+   
+    height: 80vh; 
     min-height: 450px; 
 }
 /* ==========================================================================

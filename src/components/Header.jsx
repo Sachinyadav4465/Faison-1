@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import CartDrawer from '../pages/CartDrawer'; // 👈 CartDrawer ko sahi path se import karein
+import CartDrawer from '../pages/CartDrawer'; 
 
 export default function Header() {
   const { cartCount } = useCart();
@@ -9,7 +9,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false); // 👈 Cart open/close control karne ke liye state
+  const [isCartOpen, setIsCartOpen] = useState(false); 
   const dropdownRef = useRef(null);
 
   const handleSearchSubmit = (e) => {
@@ -105,15 +105,13 @@ export default function Header() {
               <i className="bi bi-search pointer"></i>
             </Link>
             
-            <Link to="/wishlist" className="text-dark position-relative">
-              <i className="bi bi-heart pointer"></i>
-            </Link>
+          
             
             <Link to="/login" className="text-dark">
               <i className="bi bi-person pointer"></i>
             </Link>
             
-            {/* 🛒 Link ko hatakar button lagaya hai taaki page reload/redirect na ho */}
+            
             <button 
               onClick={() => setIsCartOpen(true)} 
               className="text-dark position-relative pointer d-inline-block bg-transparent border-0 p-0 fs-5"
@@ -133,7 +131,7 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* ⚪ Cart Drawer Panel Insertion */}
+
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );

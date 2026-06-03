@@ -28,7 +28,6 @@ export default function Categories() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState(6);
 
-  // Responsive device handlers
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -43,7 +42,6 @@ export default function Categories() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto scroll track configuration 
   useEffect(() => {
     const maxIndex = segmentItems.length - visibleItems;
     const timer = setInterval(() => {
@@ -71,10 +69,9 @@ export default function Categories() {
       <h3 className="section-title mb-1 text-uppercase">Celebrate Every Occasion In Style</h3>
       <p className="text-muted small">Shop By <span style={{ color: '#E3005C', fontWeight: 700 }}>Category</span></p>
       
-      {/* 🎯 NESTED WRAPPER LAYER ADDED HERE TO ISOLATE ARROWS */}
       <div className="categories-slider-relative-wrapper mt-4">
         
-        {/* 👈 Left Arrow: Corner Locked outside padding bounds */}
+        
         <button 
           onClick={handlePrev} 
           disabled={currentIndex === 0}
@@ -110,7 +107,7 @@ export default function Categories() {
           </div>
         </div>
 
-        {/* 👉 Right Arrow: Corner Locked outside padding bounds */}
+       
         <button 
           onClick={handleNext} 
           disabled={currentIndex >= segmentItems.length - visibleItems}

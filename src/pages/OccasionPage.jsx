@@ -6,7 +6,6 @@ import img1 from '../assets/haldi1.jpg';
 export default function OccasionPage() {
   const { occasionId } = useParams();
 
-  // Conditional catalog sorting simulator
   const seasonalCatalog = [
     { id: 301, title: 'Premium Heavy Wedding Lehenga', brand: 'WEDDING EDIT', price: '24,500', img: img1 },
     { id: 302, title: 'Classic Silk Border Saree', brand: 'HERITAGE LINE', price: '6,200', img: img1 }

@@ -47,19 +47,18 @@ export default function HeroBanner() {
     <div 
       className="position-relative d-flex align-items-center hero-slider-wrapper" 
       style={{ 
-        // Image ko fatne se bachane ke liye background properties add ki hain
+      
         backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.2) 100%), url(${slides[currentIndex].image})`,
-       backgroundSize: 'cover',        // 👉 Yeh sabse zaroori hai
-  backgroundPosition: 'center',    // 👉 Center main element ko safe rakhta hai
+       backgroundSize: 'cover',    
+  backgroundPosition: 'center',  
 
-  // Laptop ke liye height control
+  
   height: '75vh', 
   minHeight: '500px',
-        backgroundRepeat: 'no-repeat'   // 👈 Isse image repeat nahi hogi
+        backgroundRepeat: 'no-repeat'   
       }}
     >
       
-      {/* 👈 Left Arrow */}
       <button 
         onClick={handlePrev}
         className="position-absolute start-0 translate-middle-y rounded-circle d-flex align-items-center justify-content-center border-0 shadow-sm slider-arrow-btn ms-4"
@@ -67,7 +66,6 @@ export default function HeroBanner() {
         <i className="bi bi-chevron-left text-dark fs-5"></i>
       </button>
 
-      {/* 👉 Right Arrow */}
       <button 
         onClick={handleNext}
         className="position-absolute end-0 translate-middle-y rounded-circle d-flex align-items-center justify-content-center border-0 shadow-sm slider-arrow-btn me-4"
@@ -78,7 +76,7 @@ export default function HeroBanner() {
       {/* Main Content Layout */}
       <div className="container">
         <div className="row">
-          {/* Har slide badalne par classes reset hoke animate karengi */}
+         
           <div key={currentIndex} className="col-12 col-md-6 py-5 text-white animate-hero-text">
             <h1 className="display-4 m-0 text-white hero-heading-light">
               {slides[currentIndex].headingLight}
@@ -99,7 +97,7 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      {/* ⚪ Dots Navigation */}
+   
       <div className="position-absolute bottom-0 start-0 m-4 ps-4 d-flex gap-2 slider-dots-container">
         {slides.map((_, index) => (
           <button
@@ -118,9 +116,5 @@ export default function HeroBanner() {
   );
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-// Apne Navbar ke Bag/Cart icon pe button lagao:
-// <button onClick={() => setIsCartOpen(true)}><i className="bi bi-bag"></i></button>
 
-// Aur return ke end me drawer call karo:
-// <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 }
