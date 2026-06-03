@@ -1,4 +1,9 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+} from "react";
 
 const CartContext = createContext();
 
@@ -8,17 +13,17 @@ export function CartProvider({ children }) {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  // SAVE TO LOCAL STORAGE
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  // ADD TO CART
   const addToCart = (product) => {
     setCartItems((prev) => {
-      const existingItem = prev.find(
-        (item) => item.id === product.id
-      );
+      const existing = prev.find((item) => item.id === product.id);
 
-      if (existingItem) {
+      if (existing) {
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, qty: item.qty + 1 }
@@ -30,6 +35,7 @@ export function CartProvider({ children }) {
     });
   };
 
+  // INCREASE QTY
   const increaseQty = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>
@@ -40,6 +46,7 @@ export function CartProvider({ children }) {
     );
   };
 
+  // DECREASE QTY
   const decreaseQty = (id) => {
     setCartItems((prev) =>
       prev
@@ -52,14 +59,23 @@ export function CartProvider({ children }) {
     );
   };
 
+  // REMOVE ITEM
   const removeFromCart = (id) => {
     setCartItems((prev) =>
       prev.filter((item) => item.id !== id)
     );
   };
 
+  // TOTAL COUNT (Navbar badge ke liye)
   const cartCount = cartItems.reduce(
     (total, item) => total + item.qty,
+    0
+  );
+
+  // TOTAL PRICE (Checkout ke liye useful)
+  const cartTotal = cartItems.reduce(
+    (total, item) =>
+      total + Number(item.price) * item.qty,
     0
   );
 
@@ -68,6 +84,7 @@ export function CartProvider({ children }) {
       value={{
         cartItems,
         cartCount,
+        cartTotal,
         addToCart,
         increaseQty,
         decreaseQty,

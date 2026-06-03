@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import CartDrawer from './pages/CartDrawer';
 import ProductDetails from './pages/ProductDetails';
+import Checkout from './pages/Checkout'; // ✅ ADD THIS
 
 export default function App() {
   return (
@@ -26,14 +27,12 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            <Route
-              path="/occasion/:occasionId"
-              element={<OccasionPage />}
-            />
+            <Route path="/occasion/:occasionId" element={<OccasionPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/cart" element={<CartDrawer />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </main>
 

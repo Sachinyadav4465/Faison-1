@@ -87,10 +87,10 @@ export default function Shop() {
       <div className="row g-4">
         {fullInventory.map((prod) => (
           <div className="col-6 col-md-3" key={prod.id}>
-            <ProductCard
-              product={prod}
-              onImageClick={() => addToCart(prod)}
-            />
+           <ProductCard
+  product={prod}
+  onImageClick={addToCart}
+/>
           </div>
         ))}
       </div>
