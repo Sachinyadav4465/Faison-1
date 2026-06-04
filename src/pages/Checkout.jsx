@@ -171,6 +171,7 @@ export default function Checkout() {
                   fontWeight: "600",
                   borderRadius: "8px",
                 }}
+                onClick={() => navigate("/payment")}
               >
                 Place Order
               </button>

@@ -58,7 +58,7 @@ export default function ProductDetails() {
       size: selectedSize,
     });
 
-    navigate("/checkout"); // ✅ FIXED HERE
+    navigate("/checkout"); 
   };
 
   return (

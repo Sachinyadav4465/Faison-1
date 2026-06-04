@@ -10,9 +10,10 @@ import {
 const Contact = () => {
   return (
     <>
-      <section className="contact-section py-5">
-        <div className="container">
-          <div className="row g-4">
+      <section className="contact-section py-5 ">
+        <h1 className="text-center">Contact Us</h1>
+        <div className="container mt-4">
+          <div className="row g-4 mt-2">
 
             {/* Contact Form */}
             <div className="col-12 col-lg-6">
@@ -71,15 +72,7 @@ const Contact = () => {
 
                 <div className="contact-info">
 
-                  <a
-                    href="https://wa.me/916392377675"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="info-item whatsapp"
-                  >
-                    <FaWhatsapp />
-                    <span>Chat on WhatsApp</span>
-                  </a>
+                  
 
                   <div className="info-item">
                     <FaPhoneAlt />

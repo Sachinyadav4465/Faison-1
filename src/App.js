@@ -18,6 +18,7 @@ import CartDrawer from './pages/CartDrawer';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
 import ScrollToTop from './pages/ScrollToTop';
+import PaymentPage from './pages/PaymentPage';
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/cart" element={<CartDrawer />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/payment" element={<PaymentPage />} />
           </Routes>
         </main>
 

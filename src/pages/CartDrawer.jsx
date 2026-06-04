@@ -122,6 +122,10 @@ export default function CartDrawer({ isOpen, onClose }) {
 
             <button
               className="btn btn-danger w-100 mb-2"
+             onClick={() => {
+    onClose();
+    navigate("/checkout");
+  }}
                style={{ backgroundColor: "#e6007e", border: "none" }}
             >
               Proceed To Checkout
