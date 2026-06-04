@@ -73,7 +73,7 @@ export default function Shop() {
   ];
 
   return (
-    <div className="container my-5 pt-3">
+    <div className="container my-1 pt-3">
       <div className="border-bottom pb-3 mb-4">
         <h2 className="fw-bold text-dark m-0">
           The Complete <span>Catalog</span>

@@ -436,9 +436,8 @@ a {
 
 .occasion-card-container img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  height: auto;
+  display: block;
 }
 
 .occasion-card-container:hover img {
@@ -580,9 +579,11 @@ a {
 
 /* contact css  */
 .contact-section {
-  background: #f8f9fa;
+  background: white;
 }
-
+.contact-section h1 span {
+  color: #ff1493;
+}
 .contact-card {
   background: #fff;
   border-radius: 16px;

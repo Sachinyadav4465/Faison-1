@@ -11,7 +11,7 @@ const Contact = () => {
   return (
     <>
       <section className="contact-section py-5 ">
-        <h1 className="text-center">Contact Us</h1>
+        <h1 className="">Contact <span className="text-pink">Us</span></h1>
         <div className="container mt-4">
           <div className="row g-4 mt-2">
 

@@ -19,7 +19,7 @@ const ProductCard = ({ product, onImageClick }) => {
 
   return (
     <div
-      className="card h-100 shadow-sm border-0"
+      className="card h-100 shadow-sm border-0 mt-0"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -40,7 +40,7 @@ const ProductCard = ({ product, onImageClick }) => {
             alt={product.title}
             className="card-img-top"
             style={{
-              height: "300px",
+              height: isMobile ? "220px" : "300px",
               width: "100%",
               objectFit: "cover",
               cursor: "pointer",
@@ -81,22 +81,50 @@ const ProductCard = ({ product, onImageClick }) => {
         </div>
       </Link>
 
-      <div className="card-body d-flex flex-column">
+      <div
+        className="card-body d-flex flex-column"
+        style={{
+          minHeight: isMobile ? "170px" : "190px",
+        }}
+      >
         {/* TITLE -> DETAILS */}
         <Link
           to={`/product/${product.id}`}
           state={{ product }}
           className="text-decoration-none text-dark"
         >
-          <h6 className="fw-bold mb-1">{product.title}</h6>
+          <h6
+            className="fw-bold mb-1"
+            style={{
+              minHeight: isMobile ? "42px" : "48px",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              lineHeight: "1.3",
+            }}
+          >
+            {product.title}
+          </h6>
         </Link>
 
-        <p className="text-muted small mb-2">{product.brand}</p>
+        <p
+          className="text-muted small mb-2"
+          style={{
+            minHeight: "20px",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {product.brand}
+        </p>
 
         <h5
           className="fw-bold mb-2"
           style={{
             color: "#E3005C",
+            marginTop: "auto",
           }}
         >
           ₹{product.price}
@@ -106,14 +134,15 @@ const ProductCard = ({ product, onImageClick }) => {
         {isMobile && (
           <button
             onClick={() => onImageClick(product)}
-            className="btn w-100"
+            className="btn w-100 mt-auto"
             style={{
               backgroundColor: "#E3005C",
               color: "#fff",
               border: "none",
-              padding: "2px",
+              padding: "8px",
               borderRadius: "8px",
-              fontWeight: "300",
+              fontWeight: "500",
+              minHeight: "40px",
             }}
           >
             Add To Cart

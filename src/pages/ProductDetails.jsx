@@ -62,7 +62,7 @@ export default function ProductDetails() {
   };
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 mt-0">
       <div className="row g-5">
 
         {/* LEFT SIDE */}
