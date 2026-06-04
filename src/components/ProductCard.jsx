@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, onImageClick }) => {
   const [hover, setHover] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div
@@ -11,6 +24,7 @@ const ProductCard = ({ product, onImageClick }) => {
       onMouseLeave={() => setHover(false)}
       style={{
         overflow: "hidden",
+        borderRadius: "10px",
       }}
     >
       {/* IMAGE -> DETAILS */}
@@ -35,33 +49,35 @@ const ProductCard = ({ product, onImageClick }) => {
             }}
           />
 
-          {/* Add To Cart Button */}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              onImageClick(product);
-            }}
-            style={{
-              position: "absolute",
-              left: "50%",
-              bottom: "15px",
-              transform: hover
-                ? "translateX(-50%) translateY(0)"
-                : "translateX(-50%) translateY(50px)",
-              width: "85%",
-              backgroundColor: "#e6007e",
-              color: "#fff",
-              border: "none",
-              padding: "12px",
-              borderRadius: "6px",
-              fontWeight: "600",
-              opacity: hover ? 1 : 0,
-              transition: "all 0.4s ease",
-              zIndex: 2,
-            }}
-          >
-            Add To Cart
-          </button>
+          {/* Desktop Hover Button */}
+          {!isMobile && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                onImageClick(product);
+              }}
+              style={{
+                position: "absolute",
+                left: "50%",
+                bottom: "15px",
+                transform: hover
+                  ? "translateX(-50%) translateY(0)"
+                  : "translateX(-50%) translateY(50px)",
+                width: "85%",
+                backgroundColor: "#E3005C",
+                color: "#fff",
+                border: "none",
+                padding: "12px",
+                borderRadius: "8px",
+                fontWeight: "600",
+                opacity: hover ? 1 : 0,
+                transition: "all 0.4s ease",
+                zIndex: 2,
+              }}
+            >
+              Add To Cart
+            </button>
+          )}
         </div>
       </Link>
 
@@ -72,12 +88,37 @@ const ProductCard = ({ product, onImageClick }) => {
           state={{ product }}
           className="text-decoration-none text-dark"
         >
-          <h6 className="fw-bold">{product.title}</h6>
+          <h6 className="fw-bold mb-1">{product.title}</h6>
         </Link>
 
-        <p className="text-muted small">{product.brand}</p>
+        <p className="text-muted small mb-2">{product.brand}</p>
 
-        <h5 className="fw-bold">₹{product.price}</h5>
+        <h5
+          className="fw-bold mb-2"
+          style={{
+            color: "#E3005C",
+          }}
+        >
+          ₹{product.price}
+        </h5>
+
+        {/* Mobile Button */}
+        {isMobile && (
+          <button
+            onClick={() => onImageClick(product)}
+            className="btn w-100"
+            style={{
+              backgroundColor: "#E3005C",
+              color: "#fff",
+              border: "none",
+              padding: "2px",
+              borderRadius: "8px",
+              fontWeight: "300",
+            }}
+          >
+            Add To Cart
+          </button>
+        )}
       </div>
     </div>
   );
