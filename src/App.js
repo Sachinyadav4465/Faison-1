@@ -17,6 +17,7 @@ import CartDrawer from './pages/CartDrawer';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout'; // ✅ ADD THIS
 
+
 export default function App() {
   return (
     <CartProvider>

@@ -1,7 +1,10 @@
 import React from "react";
 import {useCart} from "../context/CartContext";
+import { FaTrash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function CartDrawer({ isOpen, onClose }) {
+  const navigate = useNavigate();
   const {
     cartItems,
     increaseQty,
@@ -97,12 +100,12 @@ export default function CartDrawer({ isOpen, onClose }) {
                   </div>
                 </div>
 
-                <button
-                  className="btn btn-sm text-danger border-0"
-                  onClick={() => removeFromCart(item.id)}
-                >
-                  🗑
-                </button>
+               <button
+  className="btn btn-sm text-danger border-0"
+  onClick={() => removeFromCart(item.id)}
+>
+  <FaTrash size={18} />
+</button>
               </div>
             ))
           )}
@@ -119,17 +122,22 @@ export default function CartDrawer({ isOpen, onClose }) {
 
             <button
               className="btn btn-danger w-100 mb-2"
+               style={{ backgroundColor: "#e6007e", border: "none" }}
             >
               Proceed To Checkout
             </button>
 
             <button
               className="btn btn-outline-dark w-100"
-              onClick={onClose}
+               style={{ backgroundColor: "#e6007e", border: "none" }}
+              onClick={() => {
+                onClose();
+                navigate("shop");
+              }}
             >
               Continue Shopping
             </button>
-          </div>
+          </div>                  
         )}
       </div>
     </>

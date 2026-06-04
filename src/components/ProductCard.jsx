@@ -41,6 +41,7 @@ const ProductCard = ({ product, onImageClick }) => {
           <button
             className="btn btn-dark w-100"
             onClick={() => onImageClick(product)}
+            style={{ backgroundColor: "#e6007e", border: "none" }}
           >
             Add To Cart
           </button>

@@ -6,6 +6,7 @@ import Categories from '../components/Categories';
 import ShopByOccasion from '../components/ShopByOccasion';
 import ProductCard from '../components/ProductCard';
 import Testimonials from '../components/Testimonials';
+import Contact from "../pages/Contact"
 
 import img1 from '../assets/bridal-2.jpg';
 import img2 from '../assets/1 (2).jpg';
@@ -55,6 +56,7 @@ export default function Home() {
         </div>
 
         <Testimonials />
+        <Contact />
       </div>
     </div>
   );

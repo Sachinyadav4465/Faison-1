@@ -578,3 +578,167 @@ a {
   .feature-icon-bullet { font-size: 1.6rem; }
 }
 
+/* contact css  */
+.contact-section {
+  background: #f8f9fa;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-title {
+  color: #ff1493;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: #ff1493;
+  box-shadow: 0 0 0 0.15rem rgba(255, 20, 147, 0.2);
+}
+
+/* Submit Button */
+.contact-btn {
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    #ff1493,
+    #ff4da6
+  );
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  color: white;
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    #e6007e,
+    #ff1493
+  );
+}
+
+.map-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.info-item svg {
+  color: #ff1493;
+  font-size: 18px;
+  min-width: 18px;
+}
+
+/* WhatsApp Card Pink */
+.whatsapp {
+  background: #ff1493;
+  color: white;
+}
+
+.whatsapp svg {
+  color: white;
+}
+
+.whatsapp:hover {
+  background: #e6007e;
+  color: white;
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  background: #ff1493;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 28px;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.floating-whatsapp:hover {
+  color: white;
+  background: #e6007e;
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 20, 147, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 18px;
+  }
+
+  .contact-title {
+    text-align: center;
+  }
+
+  .map-wrapper iframe {
+    height: 180px;
+  }
+
+  .floating-whatsapp {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    right: 15px;
+    bottom: 15px;
+  }
+}

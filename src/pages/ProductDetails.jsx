@@ -42,6 +42,7 @@ export default function ProductDetails() {
         product.img,
         product.img,
         product.img,
+         product.img,
       ];
 
   const handleAddToCart = () => {
