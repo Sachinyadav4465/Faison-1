@@ -27,7 +27,7 @@ const ProductCard = ({ product, onImageClick }) => {
         borderRadius: "10px",
       }}
     >
-      {/* IMAGE -> DETAILS */}
+     
       <Link to={`/product/${product.id}`} state={{ product }}>
         <div
           style={{
@@ -49,7 +49,7 @@ const ProductCard = ({ product, onImageClick }) => {
             }}
           />
 
-          {/* Desktop Hover Button */}
+       
           {!isMobile && (
             <button
               onClick={(e) => {
@@ -87,7 +87,7 @@ const ProductCard = ({ product, onImageClick }) => {
           minHeight: isMobile ? "170px" : "190px",
         }}
       >
-        {/* TITLE -> DETAILS */}
+
         <Link
           to={`/product/${product.id}`}
           state={{ product }}
@@ -130,7 +130,7 @@ const ProductCard = ({ product, onImageClick }) => {
           ₹{product.price}
         </h5>
 
-        {/* Mobile Button */}
+      
         {isMobile && (
           <button
             onClick={() => onImageClick(product)}

@@ -2,13 +2,18 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import img1 from '../assets/haldi1.jpg';
+import img2 from '../assets/bridal lehenga.jpg';
 
 export default function OccasionPage() {
   const { occasionId } = useParams();
 
   const seasonalCatalog = [
     { id: 301, title: 'Premium Heavy Wedding Lehenga', brand: 'WEDDING EDIT', price: '24,500', img: img1 },
-    { id: 302, title: 'Classic Silk Border Saree', brand: 'HERITAGE LINE', price: '6,200', img: img1 }
+    { id: 302, title: 'Classic Silk Border Saree', brand: 'HERITAGE LINE', price: '6,200', img: img2 },
+    { id: 303, title: 'Embroidered Anarkali Suit', brand: 'FESTIVE WEAR', price: '8,750', img: img1 },
+    { id: 304, title: 'Floral Print Gown', brand: 'PARTY COLLECTION', price: '12,300', img: img2 },
+    { id: 305, title: 'Banarasi Silk Saree', brand: 'TRADITIONAL CHIC', price: '9,500', img: img1 },
+    { id: 306, title: 'Georgette Designer Suit', brand: 'CELEBRATION SPECIALS', price: '7,800', img: img2 }
   ];
 
   return (

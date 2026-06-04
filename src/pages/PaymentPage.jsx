@@ -33,7 +33,7 @@ export default function PaymentPage() {
     >
       <div className="container">
         <div className="row g-4">
-          {/* Left Side - Payment Methods */}
+          
           <div className="col-lg-7">
             <div className="card border-0 shadow-sm rounded-4">
               <div className="card-body p-4">

@@ -15,7 +15,7 @@ const Contact = () => {
         <div className="container mt-4">
           <div className="row g-4 mt-2">
 
-            {/* Contact Form */}
+            
             <div className="col-12 col-lg-6">
               <div className="contact-card">
                 <h4 className="contact-title">Get In Touch</h4>
@@ -54,15 +54,13 @@ const Contact = () => {
                 </form>
               </div>
             </div>
-
-            {/* Map + Contact Info */}
             <div className="col-12 col-lg-6">
               <div className="contact-card">
 
                 <div className="map-wrapper mb-4">
                   <iframe
                     title="map"
-                    src="https://maps.google.com/maps?q=Noida&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="220"
                     style={{ border: 0 }}
@@ -97,7 +95,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Floating WhatsApp */}
+    
       <a
         href="https://wa.me/916392377675"
         target="_blank"

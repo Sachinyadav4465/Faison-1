@@ -11,7 +11,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Add your login logic here
+  
     navigate("/");
   };
 
@@ -32,7 +32,7 @@ export default function Login() {
               backgroundColor: "#fff",
             }}
           >
-            {/* Left Image Section */}
+        
             <div className="col-lg-5 d-none d-lg-block position-relative left-panel">
               <img
                 src={img}
@@ -90,7 +90,7 @@ export default function Login() {
               </div>
             </div>
 
-            {/* Right Form Section */}
+          
             <div className="col-lg-7 col-12 right-panel">
               <div
                 className="d-flex align-items-center justify-content-center"
@@ -229,7 +229,7 @@ export default function Login() {
                 </div>
               </div>
             </div>
-            {/* End Right Section */}
+            
           </div>
         </div>
       </div>

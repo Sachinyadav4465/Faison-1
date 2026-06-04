@@ -29,7 +29,7 @@ export default function Signup() {
         <div className="col-11 col-lg-10">
           <div className="row g-0 shadow-lg signup-card">
             
-            {/* Left Side Image */}
+            
             <div className="col-lg-5 d-none d-lg-block position-relative left-panel">
               <img
                 src={img}
@@ -68,7 +68,7 @@ export default function Signup() {
               </div>
             </div>
 
-            {/* Right Side Form */}
+          
             <div className="col-lg-7 col-12 right-panel">
               <div
                 className="d-flex align-items-center justify-content-center"

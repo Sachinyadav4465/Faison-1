@@ -65,7 +65,7 @@ export default function ProductDetails() {
     <div className="container py-5 mt-0">
       <div className="row g-5">
 
-        {/* LEFT SIDE */}
+        
         <div className="col-lg-6">
 
           <div className="border rounded shadow-sm p-3 bg-white">
@@ -81,7 +81,7 @@ export default function ProductDetails() {
             />
           </div>
 
-          {/* THUMBNAILS */}
+        
           <div className="d-flex justify-content-center gap-2 mt-3 flex-wrap">
             {productImages.map((img, index) => (
               <img
@@ -106,7 +106,7 @@ export default function ProductDetails() {
 
         </div>
 
-        {/* RIGHT SIDE */}
+        
         <div className="col-lg-6">
 
           <span className="badge bg-danger mb-3">
@@ -128,7 +128,7 @@ export default function ProductDetails() {
             collection. Perfect for weddings, festivals and parties.
           </p>
 
-          {/* SIZE */}
+        
           <div className="mt-4">
             <h6 className="fw-bold mb-3">Select Size</h6>
 
@@ -149,7 +149,7 @@ export default function ProductDetails() {
             </div>
           </div>
 
-          {/* HIGHLIGHTS */}
+          
           <div className="border rounded p-4 mt-4 bg-light">
             <h5 className="fw-bold mb-3">
               Product Highlights
@@ -164,7 +164,7 @@ export default function ProductDetails() {
             </ul>
           </div>
 
-          {/* BUTTONS */}
+          
           <div className="d-flex gap-3 mt-4">
 
             <button
@@ -187,7 +187,7 @@ export default function ProductDetails() {
             className="btn btn-outline-secondary w-100 mt-3"
             onClick={() => navigate(-1)}
           >
-            ← Back
+            Back
           </button>
 
         </div>

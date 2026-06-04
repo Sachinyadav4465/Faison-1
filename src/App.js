@@ -45,7 +45,7 @@ export default function App() {
         <Features />
         <Footer />
 
-        {/* ✅ GLOBAL WHATSAPP BUTTON */}
+        
         <a
           href="https://wa.me/916392377675"
           target="_blank"
