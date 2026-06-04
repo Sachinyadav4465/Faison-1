@@ -690,7 +690,7 @@ a {
   bottom: 25px;
   width: 60px;
   height: 60px;
-  background: #ff1493;
+  background: green;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -705,7 +705,7 @@ a {
 
 .floating-whatsapp:hover {
   color: white;
-  background: #e6007e;
+  background: green;
   transform: scale(1.1);
 }
 

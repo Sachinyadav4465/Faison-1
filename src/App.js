@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { FaWhatsapp } from "react-icons/fa";
 
 // Components
 import Header from './components/Header';
@@ -15,15 +16,15 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import CartDrawer from './pages/CartDrawer';
 import ProductDetails from './pages/ProductDetails';
-import Checkout from './pages/Checkout'; // ✅ ADD THIS
-import ScrollToTop from './pages/ScrollToTop'; // ✅ ADD THIS
-
+import Checkout from './pages/Checkout';
+import ScrollToTop from './pages/ScrollToTop';
 
 export default function App() {
   return (
     <CartProvider>
       <Router>
-        <ScrollToTop /> {/* ✅ SCROLL TO TOP ON ROUTE CHANGE */}
+        <ScrollToTop />
+
         <Header />
 
         <main style={{ minHeight: '70vh' }}>
@@ -41,6 +42,17 @@ export default function App() {
 
         <Features />
         <Footer />
+
+        {/* ✅ GLOBAL WHATSAPP BUTTON */}
+        <a
+          href="https://wa.me/916392377675"
+          target="_blank"
+          rel="noreferrer"
+          className="floating-whatsapp"
+        >
+          <FaWhatsapp />
+        </a>
+
       </Router>
     </CartProvider>
   );
