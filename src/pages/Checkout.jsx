@@ -160,21 +160,27 @@ export default function Checkout() {
                 <span>Total</span>
                 <span>₹{subtotal}</span>
               </div>
-
-              <button
-                className="btn w-100"
-                style={{
-                  backgroundColor: "#E3005C",
-                  color: "#fff",
-                  border: "none",
-                  padding: "12px",
-                  fontWeight: "600",
-                  borderRadius: "8px",
-                }}
-                onClick={() => navigate("/payment")}
-              >
-                Place Order
-              </button>
+<button
+  className="btn w-100"
+  style={{
+    backgroundColor: "#E3005C",
+    color: "#fff",
+    border: "none",
+    padding: "12px",
+    fontWeight: "600",
+    borderRadius: "8px",
+  }}
+  onClick={() =>
+    navigate("/payment", {
+      state: {
+        subtotal,
+        cartItems,
+      },
+    })
+  }
+>
+  Place Order
+</button>
 
               <button
                 className="btn w-100 mt-3"

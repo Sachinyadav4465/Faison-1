@@ -60,9 +60,9 @@ export default function Header() {
                 <Link to="/shop" className="nav-link text-dark hover-pink-link" onClick={() => setIsMobileMenuOpen(false)}>All Shop</Link>
               </li>
               
-              <li className="nav-item dropdown" ref={dropdownRef}>
+              <li className="nav-item dropdownb hover-pink-link" ref={dropdownRef}>
                 <button 
-                  className="nav-link dropdown-toggle text-dark bg-transparent border-0 fw-semibold text-uppercase small tracking-wider"
+                  className="nav-link hover-pink-link dropdown-toggle text-dark bg-transparent border-0 fw-semibold text-uppercase small tracking-wider"
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   style={{ paddingTop: '8px', paddingBottom: '8px' }}
