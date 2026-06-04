@@ -742,3 +742,71 @@ a {
     bottom: 15px;
   }
 }
+
+/* Register */
+.left-panel {
+  animation: slideLeft 1.2s ease forwards;
+}
+
+.right-panel {
+  animation: slideRight 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.signup-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* login animation */
+.left-panel {
+  animation: slideLeft 1.2s ease forwards;
+}
+
+.right-panel {
+  animation: slideRight 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

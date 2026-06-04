@@ -16,12 +16,14 @@ import Signup from './pages/Signup';
 import CartDrawer from './pages/CartDrawer';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout'; // ✅ ADD THIS
+import ScrollToTop from './pages/ScrollToTop'; // ✅ ADD THIS
 
 
 export default function App() {
   return (
     <CartProvider>
       <Router>
+        <ScrollToTop /> {/* ✅ SCROLL TO TOP ON ROUTE CHANGE */}
         <Header />
 
         <main style={{ minHeight: '70vh' }}>
